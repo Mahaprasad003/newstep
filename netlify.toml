@@ -1,0 +1,6 @@
+[build]
+  command = "tinacms build && next build"
+  publish = ".next"
+
+[build.environment]
+  NEXT_PUBLIC_TINA_BRANCH = "main"
