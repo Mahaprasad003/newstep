@@ -1,0 +1,25 @@
+{
+  "testimonials": [
+    {
+      "name": "Sarah Jenkins",
+      "role": "Admitted to Stanford University",
+      "quote": "The evidence-based approach at Newstep completely transformed my college application process. Dr. Desai's insights gave me the clarity I desperately needed.",
+      "rating": 5,
+      "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=200"
+    },
+    {
+      "name": "Rahul Mehta",
+      "role": "Parent of High School Senior",
+      "quote": "As parents, the constant anxiety of making the 'right' choice was overwhelming. Newstep Careers provided a roadmap that was logical, reassuring, and ultimately successful.",
+      "rating": 5,
+      "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200"
+    },
+    {
+      "name": "Priya Sharma",
+      "role": "Career Transitioner",
+      "quote": "I was stuck in a corporate job I hated. The psychometric assessment and subsequent counselling sessions helped me pivot to a career in design with absolute confidence.",
+      "rating": 5,
+      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200"
+    }
+  ]
+}

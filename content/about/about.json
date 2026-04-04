@@ -1,0 +1,19 @@
+{
+  "counsellorName": "Rohit Sharma",
+  "counsellorTitle": "Principal Career Architect",
+  "photo": "",
+  "bio": "Rohit brings over 15 years of deep psychological mapping and career pathing experience. Having worked closely with Ivy League alumni boards, his guidance is hyper-tailored to realistic and modern pathways.",
+  "missionStatement": "We fundamentally believe that no student exists without a core genius. It is our duty to locate it, refine it, and map it perfectly to the modern world.",
+  "timeline": [
+    {
+      "year": "2010",
+      "title": "Founded Newstep",
+      "description": "Started with a vision to map true potential."
+    },
+    {
+      "year": "2015",
+      "title": "Expanded Nationally",
+      "description": "Began testing over 5,000 students via psychometrics."
+    }
+  ]
+}
