@@ -1,0 +1,62 @@
+fragment PostParts on Post {
+  __typename
+  title
+  excerpt
+  date
+  category
+  thumbnail
+  author
+  published
+  body
+}
+
+fragment GalleryParts on Gallery {
+  __typename
+  alt
+  src
+  category
+  aspectRatio
+}
+
+fragment TeamParts on Team {
+  __typename
+  name
+  title
+  category
+  headshot
+  order
+}
+
+fragment SettingsParts on Settings {
+  __typename
+  tagline
+  heroSubtext
+  phone
+  email
+  whatsapp
+  address
+  socials {
+    __typename
+    instagram
+    linkedin
+    twitter
+    facebook
+  }
+  stats {
+    __typename
+    value
+    label
+  }
+}
+
+fragment TestimonialsParts on Testimonials {
+  __typename
+  testimonials {
+    __typename
+    name
+    role
+    quote
+    rating
+    avatar
+  }
+}

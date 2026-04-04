@@ -33,8 +33,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Tina CMS generated files (auto-generated, do not edit)
-tina/__generated__/
+# Tina CMS generated files
+# NOTE: Must be committed so CI/CD builds can resolve the import
+# tina/__generated__/
 
 # IDE
 .vscode/
