@@ -43,30 +43,34 @@ export type GalleryImage = {
  * Sorted by date descending. Used for listing pages & preview sections.
  */
 export async function getAllPosts(): Promise<BlogPostMeta[]> {
-  const response = await client.queries.postConnection({
-    sort: 'date',
-    last: 50, // reverse sort to get newest first
-  })
-
-  const posts: BlogPostMeta[] = (response.data.postConnection.edges ?? [])
-    .map((edge) => {
-      const node = edge?.node
-      if (!node) return null
-      return {
-        slug: node._sys.filename,
-        title: node.title,
-        date: node.date ?? '',
-        category: node.category ?? 'General',
-        excerpt: node.excerpt ?? '',
-        thumbnail: node.thumbnail ?? '',
-      }
+  try {
+    const response = await client.queries.postConnection({
+      sort: 'date',
+      last: 50,
     })
-    .filter(Boolean) as BlogPostMeta[]
 
-  // Sort newest first (TinaCMS sort can be unreliable for datetime)
-  posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    const posts: BlogPostMeta[] = (response.data.postConnection.edges ?? [])
+      .map((edge) => {
+        const node = edge?.node
+        if (!node) return null
+        return {
+          slug: node._sys.filename,
+          title: node.title,
+          date: node.date ?? '',
+          category: node.category ?? 'General',
+          excerpt: node.excerpt ?? '',
+          thumbnail: node.thumbnail ?? '',
+        }
+      })
+      .filter(Boolean) as BlogPostMeta[]
 
-  return posts
+    posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+
+    return posts
+  } catch (error) {
+    console.warn('Tina: Could not fetch blog posts, returning empty array:', (error as Error).message)
+    return []
+  }
 }
 
 /**
@@ -104,12 +108,17 @@ export async function getPostBySlug(slug: string) {
  * Generate static params for all blog posts.
  */
 export async function getAllPostSlugs(): Promise<{ slug: string }[]> {
-  const response = await client.queries.postConnection()
-  return (response.data.postConnection.edges ?? [])
-    .map((edge) => ({
-      slug: edge?.node?._sys.filename ?? '',
-    }))
-    .filter((p) => p.slug !== '')
+  try {
+    const response = await client.queries.postConnection()
+    return (response.data.postConnection.edges ?? [])
+      .map((edge) => ({
+        slug: edge?.node?._sys.filename ?? '',
+      }))
+      .filter((p) => p.slug !== '')
+  } catch (error) {
+    console.warn('Tina: Could not fetch post slugs, returning empty array:', (error as Error).message)
+    return []
+  }
 }
 
 // ──────────────────────────────────────────────
@@ -120,23 +129,28 @@ export async function getAllPostSlugs(): Promise<{ slug: string }[]> {
  * Fetch all gallery images. Each JSON in content/gallery/ = one image.
  */
 export async function getAllGalleryImages(): Promise<GalleryImage[]> {
-  const response = await client.queries.galleryConnection({
-    last: 100,
-  })
-
-  return (response.data.galleryConnection.edges ?? [])
-    .map((edge) => {
-      const node = edge?.node
-      if (!node) return null
-      return {
-        id: node._sys.filename,
-        src: node.src ?? '',
-        alt: node.alt ?? '',
-        category: node.category ?? 'Events',
-        aspectRatio: (node.aspectRatio as 'portrait' | 'landscape' | 'square') ?? 'landscape',
-      }
+  try {
+    const response = await client.queries.galleryConnection({
+      last: 100,
     })
-    .filter(Boolean) as GalleryImage[]
+
+    return (response.data.galleryConnection.edges ?? [])
+      .map((edge) => {
+        const node = edge?.node
+        if (!node) return null
+        return {
+          id: node._sys.filename,
+          src: node.src ?? '',
+          alt: node.alt ?? '',
+          category: node.category ?? 'Events',
+          aspectRatio: (node.aspectRatio as 'portrait' | 'landscape' | 'square') ?? 'landscape',
+        }
+      })
+      .filter(Boolean) as GalleryImage[]
+  } catch (error) {
+    console.warn('Tina: Could not fetch gallery images, returning empty array:', (error as Error).message)
+    return []
+  }
 }
 
 // ──────────────────────────────────────────────
