@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import HeroSection from '@/components/landing/HeroSection'
 import StatsBar from '@/components/landing/StatsBar'
+import PhilosophySection from '@/components/landing/PhilosophySection'
 import ServicesSection from '@/components/landing/ServicesSection'
 import ParallaxImage from '@/components/landing/ParallaxImage'
 import WhyUsSection from '@/components/landing/WhyUsSection'
@@ -23,6 +24,7 @@ export default async function Home() {
     <>
       <HeroSection tagline={settings?.tagline} heroSubtext={settings?.heroSubtext} />
       <StatsBar stats={settings?.stats} />
+      <PhilosophySection heading={settings?.philosophyHeading} body={settings?.philosophyBody} />
       <ServicesSection />
       <ParallaxImage />
       <WhyUsSection />

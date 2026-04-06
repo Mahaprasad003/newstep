@@ -205,6 +205,8 @@ export async function getAllTeamMembers(): Promise<TeamMember[]> {
 export type SiteSettings = {
   tagline: string
   heroSubtext: string
+  philosophyHeading: string
+  philosophyBody: string
   phone: string
   email: string
   whatsapp: string
@@ -235,6 +237,8 @@ export async function getSiteSettings(): Promise<SiteSettings | null> {
     return {
       tagline: data.tagline ?? '',
       heroSubtext: data.heroSubtext ?? '',
+      philosophyHeading: data.philosophyHeading ?? '',
+      philosophyBody: data.philosophyBody ?? '',
       phone: data.phone ?? '',
       email: data.email ?? '',
       whatsapp: data.whatsapp ?? '',

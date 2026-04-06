@@ -196,6 +196,8 @@ export default defineConfig({
         fields: [
           { type: "string", name: "tagline", label: "Hero Tagline" },
           { type: "string", name: "heroSubtext", label: "Hero Subtext", ui: { component: "textarea" } },
+          { type: "string", name: "philosophyHeading", label: "Philosophy Section — Heading" },
+          { type: "string", name: "philosophyBody", label: "Philosophy Section — Body Text (aim for 100–180 words)", ui: { component: "textarea" } },
           { type: "string", name: "phone", label: "Phone Number" },
           { type: "string", name: "email", label: "Email Address" },
           { type: "string", name: "whatsapp", label: "WhatsApp Number" },
