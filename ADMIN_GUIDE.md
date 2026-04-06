@@ -154,9 +154,7 @@ You'll see a "Saved" confirmation message in the CMS.
 
 ### "I can't log in to the admin panel"
 
-- Make sure you're using the correct GitHub account
-- If you've forgotten your GitHub password, reset it at github.com
-- Contact the developer if you need a new invitation
+- Use the email/password given to you; otherwise contact developer.
 
 ### "My changes aren't showing up"
 
@@ -175,8 +173,8 @@ You'll see a "Saved" confirmation message in the CMS.
 
 If you encounter any issues or have questions:
 
-**Email:** [Your email here]  
-**Phone:** [Your phone here]
+**Email:** mahaprasad003@gmail.com  
+**Phone:** +91 97397 18563
 
 When reaching out, please include:
 - What you were trying to do
