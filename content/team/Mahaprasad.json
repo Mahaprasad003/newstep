@@ -2,5 +2,9 @@
   "name": "Mahaprasad",
   "title": "Developer",
   "category": "Development",
-  "headshot": "/images/Mahaprasad%20Mohanty%20-%20Public%20Relations.png"
+  "headshot": "/images/Mahaprasad%20Mohanty%20-%20Public%20Relations.png",
+  "bio": "Mahaprasad Mohanty is currently a Data Science Intern at Solytics Partners, where he builds advanced agentic systems for compliance. He is pursuing an M.Sc. in Data Science at VIT Vellore, maintaining a CGPA of 9.07, and previously graduated as a gold medalist from Sri Sri University.\n\nWith a strong foundation in deep learning and natural language processing, he has also worked at IISc Bangalore on physics-informed neural networks, exploring the intersection of mathematical modeling and modern machine learning.\n\nBeyond his technical pursuits, Mahaprasad is a thoughtful learner with a deep interest in philosophy, fitness, and creative writing. He approaches problem-solving with both analytical rigor and creativity. Driven by a commitment to lifelong learning, he seeks to apply his skills to meaningful, real-world challenges while maintaining a balanced and reflective outlook on life.\n",
+  "socials": {
+    "linkedin": "https://www.linkedin.com/in/mahaprasad003/"
+  }
 }
