@@ -17,9 +17,12 @@ type Inputs = {
   message: string
 }
 
+const FORM_NAME = 'contact'
+
 export default function ContactClient({ settings }: { settings: SiteSettings | null }) {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
+  const [submitError, setSubmitError] = useState<string | null>(null)
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false)
 
   useEffect(() => {
@@ -33,17 +36,36 @@ export default function ContactClient({ settings }: { settings: SiteSettings | n
   const { 
     register, 
     handleSubmit, 
+    reset,
     formState: { errors } 
   } = useForm<Inputs>()
 
-  // Simulate network request
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
+  const onSubmit: SubmitHandler<Inputs> = async (data) => {
     setIsSubmitting(true)
-    setTimeout(() => {
-      console.log('Faked Submission Payload:', data)
-      setIsSubmitting(false)
+    setSubmitError(null)
+
+    try {
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({
+          'form-name': FORM_NAME,
+          ...data,
+        }).toString(),
+      })
+
+      if (!response.ok) {
+        throw new Error(`Netlify submission failed with status ${response.status}`)
+      }
+
+      reset()
       setIsSuccess(true)
-    }, 1500)
+    } catch (error) {
+      console.error('Netlify form submission failed:', error)
+      setSubmitError('We could not send your message. Please try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   // Fallback defaults
@@ -187,7 +209,14 @@ export default function ContactClient({ settings }: { settings: SiteSettings | n
                   </div>
                 )}
 
-                <form onSubmit={handleSubmit(onSubmit)} className="space-y-8 flex flex-col">
+                <form
+                  name={FORM_NAME}
+                  method="POST"
+                  data-netlify="true"
+                  onSubmit={handleSubmit(onSubmit)}
+                  className="space-y-8 flex flex-col"
+                >
+                  <input type="hidden" name="form-name" value={FORM_NAME} />
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {/* Name */}
                     <div className="space-y-3">
@@ -319,6 +348,11 @@ export default function ContactClient({ settings }: { settings: SiteSettings | n
                     <p className="text-center text-sm text-neutral-400 font-body mt-6">
                       Your details are completely secure and will not be shared with any third party.
                     </p>
+                    {submitError && (
+                      <p className="text-center text-sm text-red-500 font-body mt-3" role="alert">
+                        {submitError}
+                      </p>
+                    )}
                   </div>
                 </form>
               </AnimatedSection>
