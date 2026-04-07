@@ -163,16 +163,10 @@ export type TeamMember = {
   title: string
   category: string
   headshot: string
-  bio: TeamRichText | null
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  bio: any
   socials: TeamSocialLinks
   order: number
-}
-
-export type TeamRichText = {
-  type?: string
-  children?: TeamRichText[]
-  text?: string
-  [key: string]: unknown
 }
 
 export type TeamSocialLinks = {
@@ -201,7 +195,7 @@ export async function getAllTeamMembers(): Promise<TeamMember[]> {
           title: node.title ?? '',
           category: node.category ?? '',
           headshot: node.headshot ?? '',
-          bio: (node.bio as TeamRichText | null) ?? null,
+          bio: node.bio ?? null,
           socials: {
             linkedin: node.socials?.linkedin ?? '',
             twitter: node.socials?.twitter ?? '',
