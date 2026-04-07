@@ -23,11 +23,11 @@ export default function HeroSection({
     return () => mediaQuery.removeEventListener('change', handler)
   }, [])
 
-  const scrollToServices = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const scrollToPhilosophy = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault()
-    const services = document.getElementById('services')
-    if (services) {
-      services.scrollIntoView({ behavior: 'smooth' })
+    const philosophy = document.getElementById('philosophy')
+    if (philosophy) {
+      philosophy.scrollIntoView({ behavior: 'smooth' })
     }
   }
 
@@ -81,8 +81,8 @@ export default function HeroSection({
             Book a Free Session
           </Link>
           <a 
-            href="#services"
-            onClick={scrollToServices}
+            href="#philosophy"
+            onClick={scrollToPhilosophy}
             className="inline-flex justify-center items-center px-8 py-3.5 rounded-full bg-transparent text-white border border-white font-heading font-semibold text-[0.95rem] hover:bg-white/10 active:scale-95 transition-all"
           >
             Learn More

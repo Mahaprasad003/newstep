@@ -41,7 +41,7 @@ export default function PhilosophySection({
   body?: string
 }) {
   return (
-    <section className="py-20 bg-white">
+    <section id="philosophy" className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-6">
 
         {/* ── Text block ── */}
