@@ -5,11 +5,11 @@ import { CheckCircle2 } from 'lucide-react'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 
 const points = [
-  'Personalised 1-on-1 counselling sessions',
-  'Certified psychometric testing included',
-  'Trusted by 500+ students and families',
-  'Guidance for Class 8 through working professionals',
-  'Post-counselling follow-up support',
+  'Personalized 1-on-1 counseling powered by psychometric insights',
+  'Targeted skill development for students and professionals',
+  'Discover your strengths and align them with the right career path',
+  'Trusted by students, professionals, and families',
+  'Long-term career clarity rooted in self-knowledge, not market trends',
 ]
 
 export default function WhyUsSection() {

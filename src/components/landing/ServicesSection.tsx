@@ -8,26 +8,26 @@ import { cn } from '@/lib/utils'
 const services = [
   {
     icon: Target,
-    title: 'Career Assessment',
-    description: 'Psychometric and aptitude testing to uncover your true strengths and align them with the right career path.',
+    title: 'Career Counselling',
+    description: 'Expert guidance on stream and institution selection, application strategy, and admissions in India and abroad.',
     color: 'blue',
   },
   {
     icon: GraduationCap,
-    title: 'College Counselling',
-    description: 'Expert guidance on college selection, application strategy, and admission processes across India and abroad.',
+    title: 'Career Assessment & Analysis',
+    description: 'Multidimensional psychometric and aptitude testing to uncover your strengths and align them with the right career path.',
     color: 'green',
   },
   {
     icon: Briefcase,
-    title: 'Interview Coaching',
-    description: 'Prepare for interviews with mock sessions, feedback, and proven techniques to present your best self.',
+    title: 'Soft Skills Training',
+    description: 'Turning knowledge into impact by strengthening communication, emotional intelligence, mindfulness, and adaptability for real-world success.',
     color: 'blue',
   },
   {
     icon: FileText,
-    title: 'Resume Building',
-    description: 'Craft a compelling resume and LinkedIn profile that opens doors and gets you noticed by top recruiters.',
+    title: 'Placements',
+    description: 'Bridging talent and opportunity by matching the right skills to the right careers at the right time.',
     color: 'green',
   },
 ]
