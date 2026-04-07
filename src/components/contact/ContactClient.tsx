@@ -45,7 +45,7 @@ export default function ContactClient({ settings }: { settings: SiteSettings | n
     setSubmitError(null)
 
     try {
-      const response = await fetch('/', {
+      const response = await fetch('/__forms.html', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams({
@@ -212,7 +212,6 @@ export default function ContactClient({ settings }: { settings: SiteSettings | n
                 <form
                   name={FORM_NAME}
                   method="POST"
-                  data-netlify="true"
                   onSubmit={handleSubmit(onSubmit)}
                   className="space-y-8 flex flex-col"
                 >
