@@ -16,13 +16,19 @@ export default function TeamClient({ members }: TeamClientProps) {
   // Derive categories and counts dynamically from CMS data
   const { categories, memberCounts } = useMemo(() => {
     const counts: Record<string, number> = {}
+    const orderedCategories: string[] = []
+
     members.forEach((member) => {
       // Handle edge cases where category might be missing or empty
       const cat = member.category?.trim() || 'General'
+      if (!(cat in counts)) {
+        orderedCategories.push(cat)
+      }
       counts[cat] = (counts[cat] || 0) + 1
     })
+
     return {
-      categories: Object.keys(counts).sort(),
+      categories: orderedCategories,
       memberCounts: counts
     }
   }, [members])

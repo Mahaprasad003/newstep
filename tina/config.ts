@@ -172,6 +172,22 @@ export default defineConfig({
             label: "Headshot Image",
           },
           {
+            type: "rich-text",
+            name: "bio",
+            label: "Profile Bio",
+          },
+          {
+            type: "object",
+            name: "socials",
+            label: "Social Links",
+            fields: [
+              { type: "string", name: "linkedin", label: "LinkedIn URL" },
+              { type: "string", name: "twitter", label: "Twitter / X URL" },
+              { type: "string", name: "facebook", label: "Facebook URL" },
+              { type: "string", name: "instagram", label: "Instagram URL" },
+            ],
+          },
+          {
             type: "number",
             name: "order",
             label: "Display Order",

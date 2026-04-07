@@ -163,7 +163,23 @@ export type TeamMember = {
   title: string
   category: string
   headshot: string
+  bio: TeamRichText | null
+  socials: TeamSocialLinks
   order: number
+}
+
+export type TeamRichText = {
+  type?: string
+  children?: TeamRichText[]
+  text?: string
+  [key: string]: unknown
+}
+
+export type TeamSocialLinks = {
+  linkedin: string
+  twitter: string
+  facebook: string
+  instagram: string
 }
 
 /**
@@ -185,6 +201,13 @@ export async function getAllTeamMembers(): Promise<TeamMember[]> {
           title: node.title ?? '',
           category: node.category ?? '',
           headshot: node.headshot ?? '',
+          bio: (node.bio as TeamRichText | null) ?? null,
+          socials: {
+            linkedin: node.socials?.linkedin ?? '',
+            twitter: node.socials?.twitter ?? '',
+            facebook: node.socials?.facebook ?? '',
+            instagram: node.socials?.instagram ?? '',
+          },
           order: node.order ?? 999,
         }
       })

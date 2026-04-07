@@ -3,7 +3,6 @@ import Link from 'next/link'
 import { Award, Target, HeartHandshake, Quote } from 'lucide-react'
 import AnimatedSection from '@/components/ui/AnimatedSection'
 import SectionHeading from '@/components/ui/SectionHeading'
-import AboutTimeline from '@/components/about/AboutTimeline'
 import TeamClient from '@/components/about/TeamClient'
 import { getAllTeamMembers } from '@/lib/tina'
 
@@ -72,19 +71,7 @@ export default async function AboutPage() {
         </AnimatedSection>
       </section>
 
-      {/* 4. Credentials Timeline */}
-      <section className="py-24 md:py-32 bg-neutral-50 relative">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection>
-            <SectionHeading title="Experience & Credentials" align="center" />
-          </AnimatedSection>
-          
-          <AboutTimeline />
-
-        </div>
-      </section>
-
-      {/* 5. Values Cards */}
+      {/* 4. Values Cards */}
       <section className="py-24 md:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
