@@ -107,6 +107,9 @@ export default function Footer({ settings }: FooterProps) {
               <li>
                 <Link href="/contact" className="hover:text-brand-blue hover:translate-x-1 transition-all duration-200 inline-block">Contact</Link>
               </li>
+              <li>
+                <a href="https://newstepcareers.com/blog/how-to-complete-your-psychometric-assessment-a-step-by-step-guide" target="_blank" rel="noopener noreferrer" className="hover:text-brand-blue hover:translate-x-1 transition-all duration-200 inline-block">How to do a psychometric test</a>
+              </li>
             </ul>
           </AnimatedSection>
 
