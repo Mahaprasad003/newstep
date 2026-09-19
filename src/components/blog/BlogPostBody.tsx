@@ -31,6 +31,7 @@ export default function BlogPostBody({ body }: BlogPostBodyProps) {
             src={props?.url}
             alt={props?.alt ?? ''}
             className="mx-auto max-w-[min(100%,500px)]"
+            loading="lazy"
           />
         ),
       }}
